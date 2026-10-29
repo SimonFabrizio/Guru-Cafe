@@ -196,4 +196,32 @@ em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.0
   .wordmark{font-size:clamp(220px,23vw,300px);margin-top:72px}
 }
 @media (max-width:899px){.contact__title{margin-bottom:26px}}
+/* Transiciones de entrada: los bloques suben unos píxeles mientras aparecen.
+   Solo transform y opacity, que resuelve el compositor sin recalcular el diseño:
+   el bloque ocupa su lugar desde el primer momento y nada se corre. */
+[data-reveal]{transition:opacity .5s ease,transform .7s var(--ease-out)}
+[data-reveal].is-pending{opacity:0;transform:translateY(16px)}
+
+/* Pestañas de la carta: las tres listas se apilan en la misma celda, así el
+   bloque mide siempre lo que la más alta y lo de abajo no salta al cambiar.
+   La que sale se apaga rápido; los platos de la que entra suben en cascada. */
+.panels.is-stacked{display:grid}
+.panels.is-stacked>.dishes{grid-area:1/1;transition:opacity .14s ease,visibility 0s}
+.panels.is-stacked>.is-off{opacity:0;visibility:hidden;transition:opacity .12s ease,visibility 0s linear .12s}
+.panels .dish{transition:opacity .3s ease var(--d,0ms),transform .5s var(--ease-out) var(--d,0ms)}
+.panels .is-off .dish{opacity:0;transform:translateY(12px);transition:opacity 0s .12s,transform 0s .12s} /* vuelven a su punto de partida cuando ya no se ven */
+.panels .dish:nth-child(1){--d:60ms}
+.panels .dish:nth-child(2){--d:100ms}
+.panels .dish:nth-child(3){--d:140ms}
+.panels .dish:nth-child(4){--d:180ms}
+.panels .dish:nth-child(5){--d:220ms}
+.panels .dish:nth-child(6){--d:260ms}
+
+@media (prefers-reduced-motion:reduce){
+  /* Sin desplazamiento: solo un fundido corto */
+  [data-reveal],[data-reveal].is-pending,.panels .dish,.panels .is-off .dish{transform:none}
+  [data-reveal]{transition:opacity .3s ease}
+  .panels .dish{transition:opacity .2s ease}
+}
+@media print{[data-reveal].is-pending{opacity:1;transform:none}}
 [hidden]{display:none !important}

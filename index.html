@@ -64,10 +64,11 @@
 <!-- MENÚ -->
 <section class="section" id="menu">
   <div class="wrap">
-    <p class="eyebrow">La carta</p>
-    <h2 class="h2">Menú.</h2>
-    <p class="note">Carta de ejemplo, se actualiza al abrir. <!-- EJEMPLO: carta provisoria --></p>
-    <div class="tabs" role="tablist" aria-label="Categorías del menú"><button class="tab" role="tab" id="tab-cafes" aria-controls="panel-cafes" aria-selected="true" tabindex="0">Cafés</button><button class="tab" role="tab" id="tab-vermu" aria-controls="panel-vermu" aria-selected="false" tabindex="-1">Vermú</button><button class="tab" role="tab" id="tab-comida" aria-controls="panel-comida" aria-selected="false" tabindex="-1">Comida</button></div>
+    <p class="eyebrow" data-reveal>La carta</p>
+    <h2 class="h2" data-reveal>Menú.</h2>
+    <p class="note" data-reveal>Carta de ejemplo, se actualiza al abrir. <!-- EJEMPLO: carta provisoria --></p>
+    <div class="tabs" data-reveal role="tablist" aria-label="Categorías del menú"><button class="tab" role="tab" id="tab-cafes" aria-controls="panel-cafes" aria-selected="true" tabindex="0">Cafés</button><button class="tab" role="tab" id="tab-vermu" aria-controls="panel-vermu" aria-selected="false" tabindex="-1">Vermú</button><button class="tab" role="tab" id="tab-comida" aria-controls="panel-comida" aria-selected="false" tabindex="-1">Comida</button></div>
+    <div class="panels" data-reveal>
     <ul class="dishes" role="tabpanel" id="panel-cafes" aria-labelledby="tab-cafes">
         <li class="dish">
           <div class="dish__photo" role="img" aria-label="Foto del plato pendiente"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Foto</span></div>
@@ -122,20 +123,21 @@
           <div class="dish__text"><h3>Budín del día</h3><p>Preguntá por el sabor</p></div>
         </li>
     </ul>
+    </div>
   </div>
 </section>
 
 <!-- CÓMO ENCARGAR -->
 <section class="order" id="encargar">
   <div class="wrap order__grid">
-    <div>
+    <div data-reveal>
       <p class="eyebrow">Para retirar</p>
       <h2 class="order__title">Encargá.<br>Retirá.<br>Sin esperar.</h2>
     </div>
     <ol class="steps">
-      <li><span class="steps__n">1</span><span>Escribinos por Instagram o WhatsApp y contanos qué querés.</span></li>
-      <li><span class="steps__n">2</span><span>Te confirmamos el pedido y la hora.</span></li>
-      <li><span class="steps__n">3</span><span>Pasás por el local y lo retirás.</span></li>
+      <li data-reveal><span class="steps__n">1</span><span>Escribinos por Instagram o WhatsApp y contanos qué querés.</span></li>
+      <li data-reveal><span class="steps__n">2</span><span>Te confirmamos el pedido y la hora.</span></li>
+      <li data-reveal><span class="steps__n">3</span><span>Pasás por el local y lo retirás.</span></li>
     </ol>
   </div>
 </section>
@@ -143,20 +145,20 @@
 <!-- NOSOTROS -->
 <section class="about" id="nosotros">
   <div class="wrap about__grid">
-    <div>
+    <div data-reveal>
       <p class="eyebrow">Nosotros</p>
       <h2 class="h2 about__title">Encuentros.<br>Historias.<br><em>Amigos.</em></h2>
       <p class="about__text">En Gurú Café creemos que una buena pausa empieza con un buen café. Café de especialidad, vermú y algo rico para llevar, en un lugar pensado para encontrarte con los tuyos.</p>
       <!-- EJEMPLO: texto genérico, el dueño debe corregirlo con su historia real -->
     </div>
-    <img class="about__img" src="fotos/interior-oscuro.webp" alt="Salón cálido con lámparas colgantes" width="450" height="600" loading="lazy">
+    <img class="about__img" data-reveal src="fotos/interior-oscuro.webp" alt="Salón cálido con lámparas colgantes" width="450" height="600" loading="lazy">
   </div>
 </section>
 
 <!-- UBICACIÓN -->
 <section class="where" id="ubicacion">
   <div class="wrap where__grid">
-    <div>
+    <div data-reveal>
       <p class="eyebrow eyebrow--bronze">Dónde estamos</p>
       <h2 class="where__title">Calle 13<br>N.º 4478.</h2>
       <address class="where__addr">Berisso Centro, Buenos Aires</address>
@@ -171,7 +173,7 @@
       </ul>
       <!-- EJEMPLO: formas de pago a confirmar con el dueño -->
     </div>
-    <div class="map">
+    <div class="map" data-reveal>
       <iframe title="Mapa de Gurú Café en Google Maps" src="https://maps.google.com/maps?q=-34.8705053,-57.8808853&z=17&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
       <a class="map__link" href="https://maps.app.goo.gl/acDm8Dr8mXkuoBvK7" rel="noopener">Abrir en Google Maps</a>
     </div>
@@ -184,11 +186,11 @@
 <footer class="contact" id="contacto">
   <div class="wrap">
     <div class="contact__head">
-    <div>
+    <div data-reveal>
     <p class="eyebrow eyebrow--bronze">Contacto</p>
     <h2 class="contact__title">Hablemos.</h2>
     </div>
-    <div class="contact__box">
+    <div class="contact__box" data-reveal>
     <div class="contact__actions">
       <a class="btn btn--bronze" href="https://wa.me/5492210000000?text=Hola%20Gur%C3%BA%2C%20quer%C3%ADa%20consultar%20por%20un%20pedido" rel="noopener">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.5 7.3L3 20l1.3-5A8.4 8.4 0 1 1 21 11.5z"/></svg>
@@ -202,8 +204,8 @@
     <p class="contact__note">Número de WhatsApp de ejemplo. <!-- EJEMPLO: reemplazar por el número real --></p>
     </div>
     </div>
-    <p class="wordmark" aria-hidden="true">Gurú<span>.</span></p>
-    <p class="legal">© Gurú Café · Calle 13 N.º 4478, Berisso</p>
+    <p class="wordmark" data-reveal aria-hidden="true">Gurú<span>.</span></p>
+    <p class="legal" data-reveal>© Gurú Café · Calle 13 N.º 4478, Berisso</p>
   </div>
 </footer>
 
