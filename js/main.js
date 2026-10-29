@@ -3,12 +3,26 @@
   var tabs = document.querySelectorAll('.tab');
   if (!tabs.length) return;
 
+  // Con JS las listas se apilan (ver .panels en el CSS) y se alternan con una
+  // clase en vez de "hidden", para poder animar la entrada sin mover la página.
+  var panels = document.querySelector('.panels');
+  if (panels) {
+    panels.classList.add('is-stacked');
+    tabs.forEach(function (t) {
+      var panel = document.getElementById(t.getAttribute('aria-controls'));
+      panel.classList.toggle('is-off', panel.hidden);
+      panel.hidden = false;
+    });
+  }
+
   function select(tab) {
     tabs.forEach(function (t) {
       var on = t === tab;
+      var panel = document.getElementById(t.getAttribute('aria-controls'));
       t.setAttribute('aria-selected', on ? 'true' : 'false');
       t.tabIndex = on ? 0 : -1;
-      document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+      if (panels) panel.classList.toggle('is-off', !on);
+      else panel.hidden = !on;
     });
   }
 
@@ -120,5 +134,31 @@
       if (tab) document.getElementById(tab).click();
       close();
     });
+  });
+})();
+
+// Entrada de secciones: al llegar a cada sección, sus bloques aparecen en cascada.
+// Solo se esconden los que al cargar están debajo del borde de la pantalla:
+// sin JS todo se ve normal y lo que ya está a la vista no parpadea.
+(function () {
+  var items = document.querySelectorAll('[data-reveal]');
+  if (!items.length || !('IntersectionObserver' in window)) return;
+
+  var io = new IntersectionObserver(function (entries) {
+    var n = 0;
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      io.unobserve(entry.target);
+      // Los que entran juntos salen escalonados, en el orden de la página
+      entry.target.style.transitionDelay = Math.min(n++ * 70, 280) + 'ms';
+      entry.target.classList.remove('is-pending');
+    });
+  }, { threshold: 0.2 });
+
+  var fold = window.innerHeight;
+  items.forEach(function (el) {
+    if (el.getBoundingClientRect().top < fold) return;
+    el.classList.add('is-pending');
+    io.observe(el);
   });
 })();
