@@ -38,7 +38,7 @@ em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.0
 /* Inicio */
 .hero{position:relative;color:var(--cream);background:var(--ink);min-height:100svh;min-height:max(100svh,640px);display:flex;overflow:hidden}
 .hero__bg{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,16,20,.15) 0%,rgba(11,16,20,.55) 45%,var(--ink) 92%),url(../fotos/guru-mandala.webp) center top/cover no-repeat}
-.hero__inner{position:relative;display:flex;flex-direction:column;justify-content:space-between;padding-top:20px;padding-bottom:36px}
+.hero__inner{position:relative;display:flex;flex-direction:column;justify-content:space-between;padding-top:20px;padding-bottom:92px}
 .topbar{display:flex;align-items:center;justify-content:space-between;gap:16px}
 .brand{display:flex;align-items:center;gap:14px}
 .brand img{width:48px;height:48px;border-radius:50%;object-fit:cover}
@@ -111,3 +111,49 @@ em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.0
 .wordmark{margin:56px 0 0;font-weight:700;font-size:clamp(130px,40vw,160px);line-height:.8;letter-spacing:-.07em}
 .wordmark span{color:var(--bronze)}
 .legal{margin:26px 0 0;padding-top:20px;border-top:1px solid #1F272D;font-size:14px;color:var(--muted-dark)}
+
+/* Computadora */
+@media (min-width:900px){
+  :root{--gutter:40px}
+  .brand__name{display:inline}
+  .nav{gap:32px;font-size:15px}
+  .nav__extra{display:inline}
+  .nav__cta{display:inline-block;border:2px solid var(--bronze);color:var(--bronze);border-radius:9999px;padding:10px 22px}
+  .hero__bg{left:auto;width:52%;background:linear-gradient(90deg,var(--ink) 0%,rgba(11,16,20,.55) 35%,rgba(11,16,20,.1) 100%),url(../fotos/guru-mandala.webp) center top/cover no-repeat}
+  .hero__inner{justify-content:flex-start;gap:96px;padding-top:24px;padding-bottom:96px}
+  .hero__copy{max-width:640px}
+  .hero__title{font-size:clamp(100px,10.3vw,132px);line-height:.88;letter-spacing:-.05em}
+  .hero__lead{font-size:20px;max-width:480px;margin-bottom:34px}
+  .actions .btn{flex:none;font-size:18px;padding:18px 36px}
+  .section{padding:88px 0}
+  .h2{font-size:96px}
+  .tab{font-size:48px;padding-bottom:14px}
+  .tabs{gap:40px;margin-bottom:24px}
+  .dishes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:80px}
+  .dish{gap:24px;padding:24px 0}
+  .dish__photo{width:128px;height:128px;border-radius:20px;font-size:13px}
+  .dish h3{font-size:23px}
+  .dish p{font-size:18px;line-height:1.61}
+  .order{margin-top:0;padding:64px 0}
+  .order__grid{grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+  .order__title{font-size:72px;letter-spacing:-.045em}
+  .steps li{font-size:21px;gap:24px;padding:22px 0}
+  .steps__n{width:40px;font-size:56px}
+  .about{padding:96px 0}
+  .about__grid{grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  .about__title{font-size:84px;letter-spacing:-.045em}
+  .about__img{height:520px}
+  .where{padding:96px 0}
+  .where__grid{grid-template-columns:1fr 1fr;gap:64px}
+  .where__title{font-size:84px}
+  .map iframe{height:100%;min-height:420px}
+  .contact{padding:96px 0 36px}
+  .contact__title{font-size:84px;margin:0}
+  .contact__head{display:flex;justify-content:space-between;align-items:flex-end;gap:48px}
+  .contact__actions{display:flex;gap:14px}
+  .contact__actions .btn{font-size:18px;padding:18px 32px}
+  .contact__note{text-align:left}
+  .wordmark{font-size:clamp(220px,23vw,300px);margin-top:72px}
+}
+@media (max-width:899px){.contact__title{margin-bottom:26px}}
+[hidden]{display:none !important}
