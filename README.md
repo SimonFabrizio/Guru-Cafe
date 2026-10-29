@@ -8,3 +8,5 @@ Web estática de una sola página (HTML, CSS y JavaScript simple, sin frameworks
 - Horarios, formas de pago, WhatsApp y carta son de **EJEMPLO**: buscar `EJEMPLO` en `index.html` y reemplazar antes de mostrarla al dueño.
 
 Ver el sitio: abrir `index.html` en el navegador.
+
+Demo publicada: https://simonfabrizio.github.io/Guru-Cafe/
