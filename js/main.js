@@ -149,8 +149,9 @@
     entries.forEach(function (entry) {
       if (!entry.isIntersecting) return;
       io.unobserve(entry.target);
-      // Los que entran juntos salen escalonados, en el orden de la página
-      entry.target.style.transitionDelay = Math.min(n++ * 70, 280) + 'ms';
+      // Los que entran juntos salen escalonados, 50 ms uno de otro, en el orden de
+      // la página; con tope para que el último de un grupo largo no se haga esperar
+      entry.target.style.transitionDelay = Math.min(n++ * 50, 300) + 'ms';
       entry.target.classList.remove('is-pending');
     });
   }, { threshold: 0.2 });
