@@ -51,6 +51,70 @@
 </header>
 
 <main>
+<!-- MENÚ -->
+<section class="section" id="menu">
+  <div class="wrap">
+    <p class="eyebrow">La carta</p>
+    <h2 class="h2">Menú.</h2>
+    <p class="note">Carta de ejemplo, se actualiza al abrir. <!-- EJEMPLO: carta provisoria --></p>
+    <div class="tabs" role="tablist" aria-label="Categorías del menú"><button class="tab" role="tab" id="tab-cafes" aria-controls="panel-cafes" aria-selected="true" tabindex="0">Cafés</button><button class="tab" role="tab" id="tab-vermu" aria-controls="panel-vermu" aria-selected="false" tabindex="-1">Vermú</button><button class="tab" role="tab" id="tab-comida" aria-controls="panel-comida" aria-selected="false" tabindex="-1">Comida</button></div>
+    <ul class="dishes" role="tabpanel" id="panel-cafes" aria-labelledby="tab-cafes">
+        <li class="dish">
+          <div class="dish__photo" role="img" aria-label="Foto del plato pendiente"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Foto</span></div>
+          <div class="dish__text"><h3>Espresso</h3><p>Café de especialidad, intenso</p></div>
+        </li>
+        <li class="dish">
+          <div class="dish__photo" role="img" aria-label="Foto del plato pendiente"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Foto</span></div>
+          <div class="dish__text"><h3>Cortado</h3><p>Espresso con un toque de leche</p></div>
+        </li>
+        <li class="dish">
+          <div class="dish__photo" role="img" aria-label="Foto del plato pendiente"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Foto</span></div>
+          <div class="dish__text"><h3>Flat white</h3><p>Doble espresso, leche texturizada</p></div>
+        </li>
+        <li class="dish">
+          <div class="dish__photo" role="img" aria-label="Foto del plato pendiente"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Foto</span></div>
+          <div class="dish__text"><h3>Capuchino</h3><p>Espuma sedosa, canela opcional</p></div>
+        </li>
+        <li class="dish">
+          <div class="dish__photo" role="img" aria-label="Foto del plato pendiente"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Foto</span></div>
+          <div class="dish__text"><h3>Latte</h3><p>Suave y cremoso</p></div>
+        </li>
+        <li class="dish">
+          <div class="dish__photo" role="img" aria-label="Foto del plato pendiente"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Foto</span></div>
+          <div class="dish__text"><h3>Café frío</h3><p>Cold brew con hielo</p></div>
+        </li>
+    </ul>
+    <ul class="dishes" role="tabpanel" id="panel-vermu" aria-labelledby="tab-vermu" hidden>
+        <li class="dish">
+          <div class="dish__photo" role="img" aria-label="Foto del plato pendiente"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Foto</span></div>
+          <div class="dish__text"><h3>Vermú de la casa</h3><p>Con soda, naranja y aceituna</p></div>
+        </li>
+        <li class="dish">
+          <div class="dish__photo" role="img" aria-label="Foto del plato pendiente"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Foto</span></div>
+          <div class="dish__text"><h3>Vermú con picada</h3><p>Para compartir de a dos</p></div>
+        </li>
+    </ul>
+    <ul class="dishes" role="tabpanel" id="panel-comida" aria-labelledby="tab-comida" hidden>
+        <li class="dish">
+          <div class="dish__photo" role="img" aria-label="Foto del plato pendiente"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Foto</span></div>
+          <div class="dish__text"><h3>Tostado de jamón y queso</h3><p>Pan de masa madre</p></div>
+        </li>
+        <li class="dish">
+          <div class="dish__photo" role="img" aria-label="Foto del plato pendiente"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Foto</span></div>
+          <div class="dish__text"><h3>Medialuna</h3><p>De manteca</p></div>
+        </li>
+        <li class="dish">
+          <div class="dish__photo" role="img" aria-label="Foto del plato pendiente"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Foto</span></div>
+          <div class="dish__text"><h3>Tostón de palta</h3><p>Con huevo y semillas</p></div>
+        </li>
+        <li class="dish">
+          <div class="dish__photo" role="img" aria-label="Foto del plato pendiente"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Foto</span></div>
+          <div class="dish__text"><h3>Budín del día</h3><p>Preguntá por el sabor</p></div>
+        </li>
+    </ul>
+  </div>
+</section>
+
 <!-- SECCIONES -->
 </main>
 
