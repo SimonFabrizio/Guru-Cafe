@@ -1,0 +1,57 @@
+/* Gurú Café — estilos. Mobile first. */
+:root{
+  --ink:#0B1014;
+  --ink-2:#141B21;
+  --line-dark:#2A3138;
+  --cream:#F1E7DA;
+  --sand:#E4D4BF;
+  --line-light:#D5C6B2;
+  --bronze:#CBA07D;
+  --bronze-deep:#7A4B26;
+  --text-dark:#2B2520;
+  --muted:#5C4A3C;
+  --muted-dark:#A9A096;
+  --font:'Inter Tight',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --serif:'Instrument Serif',Georgia,serif;
+  --gutter:24px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--font);line-height:1.5;-webkit-text-size-adjust:100%}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit}
+:focus-visible{outline:3px solid var(--bronze);outline-offset:3px}
+.wrap{width:100%;max-width:1200px;margin:0 auto;padding-inline:var(--gutter)}
+.eyebrow{margin:0 0 16px;font-size:14px;font-weight:600;letter-spacing:.05em;text-transform:uppercase}
+.eyebrow--bronze{color:var(--bronze)}
+em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.02em}
+
+/* Botones: siempre píldora */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:700;font-size:17px;padding:16px 28px;border-radius:9999px;border:2px solid transparent;transition:transform .15s ease,background .15s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn--bronze{background:var(--bronze);color:var(--ink)}
+.btn--ghost-bronze{border-color:var(--bronze);color:var(--bronze)}
+.actions{display:flex;gap:12px}
+.actions .btn{flex:1}
+
+/* Inicio */
+.hero{position:relative;color:var(--cream);background:var(--ink);min-height:100svh;min-height:max(100svh,640px);display:flex;overflow:hidden}
+.hero__bg{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,16,20,.15) 0%,rgba(11,16,20,.55) 45%,var(--ink) 92%),url(../fotos/guru-mandala.webp) center top/cover no-repeat}
+.hero__inner{position:relative;display:flex;flex-direction:column;justify-content:space-between;padding-top:20px;padding-bottom:36px}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:14px}
+.brand img{width:48px;height:48px;border-radius:50%;object-fit:cover}
+.brand__name{display:none;font-weight:700;font-size:22px;letter-spacing:-.02em}
+.nav{display:flex;align-items:center;gap:18px;font-size:14px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.nav__extra{display:none}
+.nav__cta{display:none}
+.hero__title{margin:0 0 18px;font-weight:500;font-size:clamp(60px,19vw,76px);line-height:.9;letter-spacing:-.045em}
+.hero__title em{display:block;font-size:.82em;color:var(--bronze)}
+.hero__lead{margin:0 0 26px;font-size:18px;line-height:1.5;color:#E3D8CB;max-width:320px}
+
+/* WhatsApp flotante */
+.wa-float{position:fixed;right:16px;bottom:20px;z-index:50;width:56px;height:56px;border-radius:50%;background:var(--bronze);color:var(--ink);display:flex;align-items:center;justify-content:center;box-shadow:rgba(0,0,0,.45) 3px 3px 32px -10px}
+.wa-float:hover{transform:scale(1.06)}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.wa-float{transition:none}}
