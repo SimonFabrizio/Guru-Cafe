@@ -14,6 +14,9 @@
   --font:'Inter Tight',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
   --serif:'Instrument Serif',Georgia,serif;
   --gutter:24px;
+  /* Curvas físicas: arranque rápido y frenado largo, como un objeto con masa */
+  --ease-out:cubic-bezier(.23,1,.32,1);
+  --ease-spring:cubic-bezier(.34,1.36,.64,1); /* vuelta con un rebote mínimo, como un resorte */
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -43,9 +46,35 @@ em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.0
 .brand{display:flex;align-items:center;gap:14px}
 .brand img{width:48px;height:48px;border-radius:50%;object-fit:cover}
 .brand__name{display:none;font-weight:700;font-size:22px;letter-spacing:-.02em}
-.nav{display:flex;align-items:center;gap:18px;font-size:14px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
-.nav__extra{display:none}
-.nav__cta{display:none}
+/* Navegación: atracción magnética + submenú que flota */
+.nav{display:flex;align-items:center;gap:2px;font-size:14px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.nav__item{position:relative;isolation:isolate;display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border:0;border-radius:9999px;background:none;color:inherit;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:translate .55s var(--ease-spring),scale .16s var(--ease-out),color .2s ease}
+.nav__item.is-magnet{transition:translate .3s var(--ease-out),scale .16s var(--ease-out),color .2s ease}
+.nav__item::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;background:rgba(241,231,218,.1);opacity:0;scale:.86;transition:opacity .2s ease,scale .35s var(--ease-out)}
+.nav__item:active{scale:.96}
+.nav__item:focus-visible::before,.nav__item[aria-expanded="true"]::before{opacity:1;scale:1}
+.nav__label{display:inline-flex;align-items:center;gap:6px;transition:translate .55s var(--ease-spring)}
+.nav__item.is-magnet .nav__label{transition:translate .3s var(--ease-out)}
+.nav__chevron{transition:rotate .3s var(--ease-out)}
+.nav__item[aria-expanded="true"] .nav__chevron{rotate:180deg}
+.nav__extra,.nav__cta{display:none}
+@media (hover:hover) and (pointer:fine){.nav__item:hover::before{opacity:1;scale:1}}
+
+.nav__group{position:relative}
+.nav__sub{position:absolute;top:calc(100% + 10px);left:50%;z-index:20;min-width:216px;margin:0;padding:8px;list-style:none;border:1px solid rgba(241,231,218,.12);border-radius:20px;background:rgba(20,27,33,.78);-webkit-backdrop-filter:blur(18px) saturate(160%);backdrop-filter:blur(18px) saturate(160%);box-shadow:0 24px 48px -16px rgba(0,0,0,.6);translate:-50% 0;transform-origin:top center;opacity:0;transform:translateY(8px) scale(.96);visibility:hidden;pointer-events:none;transition:opacity .14s ease,transform .16s var(--ease-out),visibility 0s linear .16s}
+.nav__sub::before{content:"";position:absolute;left:0;right:0;bottom:100%;height:12px} /* puente: el cursor no pierde el submenú al cruzar el hueco */
+.nav__group[data-open] .nav__sub{opacity:1;transform:none;visibility:visible;pointer-events:auto;transition:opacity .2s ease,transform .34s var(--ease-out),visibility 0s}
+.nav__sub a{display:flex;align-items:center;min-height:44px;padding:0 14px;border-radius:12px;font-size:16px;font-weight:500;letter-spacing:0;text-transform:none;color:var(--cream);opacity:0;translate:0 4px;transition:background-color .15s ease,opacity .12s ease,translate .2s var(--ease-out)}
+.nav__group[data-open] .nav__sub a{opacity:1;translate:0 0;transition:background-color .15s ease,opacity .22s ease var(--d,0ms),translate .32s var(--ease-out) var(--d,0ms)}
+.nav__sub li:nth-child(2){--d:30ms}
+.nav__sub li:nth-child(3){--d:60ms}
+.nav__sub li:nth-child(4){--d:90ms}
+.nav__sub a:focus-visible{outline-offset:-2px}
+.nav__sub a:active{background:rgba(241,231,218,.12)}
+.nav__sep{margin-top:6px;padding-top:6px;border-top:1px solid rgba(241,231,218,.12)}
+@media (hover:hover) and (pointer:fine){.nav__sub a:hover{background:rgba(241,231,218,.08)}}
+/* Abierto con teclado: sin animación, aparece al instante */
+.nav__group[data-instant] .nav__sub,.nav__group[data-instant] .nav__sub a{transition:none}
 .hero__title{margin:0 0 18px;font-weight:500;font-size:clamp(60px,19vw,76px);line-height:.9;letter-spacing:-.045em}
 .hero__title em{display:block;font-size:.82em;color:var(--bronze)}
 .hero__lead{margin:0 0 26px;font-size:18px;line-height:1.5;color:#E3D8CB;max-width:320px}
@@ -54,7 +83,16 @@ em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.0
 .wa-float{position:fixed;right:16px;bottom:20px;z-index:50;width:56px;height:56px;border-radius:50%;background:var(--bronze);color:var(--ink);display:flex;align-items:center;justify-content:center;box-shadow:rgba(0,0,0,.45) 3px 3px 32px -10px}
 .wa-float:hover{transform:scale(1.06)}
 
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.wa-float{transition:none}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .btn,.wa-float{transition:none}
+  /* Sin desplazamientos: solo fundidos de opacidad y color */
+  .nav__item,.nav__label{translate:none !important;transition:color .2s ease}
+  .nav__item::before{scale:1;transition:opacity .2s ease}
+  .nav__sub,.nav__group[data-open] .nav__sub{transform:none}
+  .nav__sub a,.nav__group[data-open] .nav__sub a{translate:none;transition:background-color .15s ease,opacity .2s ease}
+}
+@media (prefers-reduced-transparency:reduce){.nav__sub{background:var(--ink-2);-webkit-backdrop-filter:none;backdrop-filter:none}}
 
 /* Menú */
 .section{padding:56px 0}
@@ -116,9 +154,11 @@ em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.0
 @media (min-width:900px){
   :root{--gutter:40px}
   .brand__name{display:inline}
-  .nav{gap:32px;font-size:15px}
-  .nav__extra{display:inline}
-  .nav__cta{display:inline-block;border:2px solid var(--bronze);color:var(--bronze);border-radius:9999px;padding:10px 22px}
+  .nav{gap:8px;font-size:15px}
+  .nav__item{padding:0 16px}
+  .nav__extra{display:inline-flex}
+  .nav__cta{display:inline-flex;margin-left:8px;padding:0 22px;border:2px solid var(--bronze);color:var(--bronze)}
+  .nav__cta::before{background:rgba(203,160,125,.16)}
   .hero__bg{left:auto;width:52%;background:linear-gradient(90deg,var(--ink) 0%,rgba(11,16,20,.55) 35%,rgba(11,16,20,.1) 100%),url(../fotos/guru-mandala.webp) center top/cover no-repeat}
   .hero__inner{justify-content:flex-start;gap:96px;padding-top:24px;padding-bottom:96px}
   .hero__copy{max-width:640px}
