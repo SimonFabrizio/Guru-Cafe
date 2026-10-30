@@ -1,11 +1,14 @@
 <!doctype html>
-<html lang="es">
+<html lang="es-AR">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Gurú Café | Café, vermú y comida al paso en Berisso</title>
-<meta name="description" content="Mirá la carta, cómo llegar y cómo encargar para retirar en Gurú Café, Calle 13 N.º 4478, Berisso.">
+<meta name="description" content="Gurú Café: café de especialidad, vermú y comida al paso en Berisso Centro. Mirá la carta, cómo encargar para retirar y cómo llegar a Calle 13 N.º 4478.">
+<!-- Demo: no indexar hasta que el dueño acepte (Fase 9: sacar noindex y cambiar robots.txt) -->
 <meta name="robots" content="noindex, nofollow">
+<!-- Cambiar al dominio definitivo junto con og:url y og:image -->
+<link rel="canonical" href="https://simonfabrizio.github.io/Guru-Cafe/">
 <meta name="theme-color" content="#1C1412">
 <link rel="icon" type="image/png" sizes="64x64" href="fotos/favicon-64.png">
 <link rel="apple-touch-icon" href="fotos/favicon-192.png">
@@ -26,6 +29,40 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
+<!-- Fondo del inicio: está en el CSS, se precarga para que aparezca antes -->
+<link rel="preload" as="image" href="fotos/guru-mandala.webp" type="image/webp" fetchpriority="high">
+<!-- EJEMPLO: horarios, rango de precios y carta provisorios. Los horarios están también en Ubicación y en el pie: cambiar los 3 juntos -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CafeOrCoffeeShop",
+  "name": "Gurú Café",
+  "slogan": "Tu pausa, en modo Gurú.",
+  "description": "Café de especialidad, vermú y comida al paso en el centro de Berisso.",
+  "url": "https://simonfabrizio.github.io/Guru-Cafe/",
+  "image": "https://simonfabrizio.github.io/Guru-Cafe/fotos/og.jpg",
+  "logo": "https://simonfabrizio.github.io/Guru-Cafe/fotos/favicon-192.png",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Calle 13 N.º 4478",
+    "addressLocality": "Berisso",
+    "addressRegion": "Buenos Aires",
+    "addressCountry": "AR"
+  },
+  "geo": {"@type": "GeoCoordinates", "latitude": -34.8705053, "longitude": -57.8808853},
+  "hasMap": "https://maps.app.goo.gl/acDm8Dr8mXkuoBvK7",
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "20:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday"], "opens": "09:00", "closes": "21:00"}
+  ],
+  "servesCuisine": ["Café de especialidad", "Vermú", "Comida al paso"],
+  "priceRange": "$$",
+  "currenciesAccepted": "ARS",
+  "paymentAccepted": "Efectivo, transferencia, QR, débito, crédito",
+  "hasMenu": "https://simonfabrizio.github.io/Guru-Cafe/#menu",
+  "sameAs": ["https://www.instagram.com/gurucafe.ar/"]
+}
+</script>
 </head>
 <body>
 
@@ -79,7 +116,7 @@
   <div class="wrap hero__inner">
     <div class="hero__copy">
       <p class="badge"><span class="badge__dot" aria-hidden="true"></span>Café de especialidad ☕</p>
-      <h1 class="hero__title">Tu pausa,<br><em>en modo Gurú.</em></h1>
+      <h1 class="hero__title"><span class="sr-only">Gurú Café en Berisso. </span>Tu pausa,<br><em>en modo Gurú.</em></h1>
       <p class="hero__lead">Café de especialidad, vermú y algo rico para llevar, en pleno centro de Berisso.</p>
       <div class="actions">
         <a class="btn btn--primary" href="#menu">Ver menú</a>
@@ -210,7 +247,7 @@
       <p class="eyebrow eyebrow--light">Dónde estamos</p>
       <h2 class="where__title">Calle 13<br><em>N.º 4478.</em></h2>
       <address class="where__addr">Berisso Centro, Buenos Aires</address>
-      <!-- EJEMPLO: el local todavía no abrió. Los horarios de abajo alimentan el aviso "Abierto ahora" (main.js lee data-days, data-open y data-close) -->
+      <!-- EJEMPLO: el local todavía no abrió. Horarios también en el pie y en el JSON-LD del <head>: cambiar los 3 juntos. Los horarios de abajo alimentan el aviso "Abierto ahora" (main.js lee data-days, data-open y data-close) -->
       <p class="status" data-status hidden><span class="status__dot" aria-hidden="true"></span><span data-status-text></span></p>
       <dl class="hours">
         <div data-days="1,2,3,4,5" data-open="8:00" data-close="20:00"><dt>Lunes a viernes</dt><dd>8:00 a 20:00</dd></div>
@@ -269,6 +306,7 @@
       </nav>
       <div class="foot__col">
         <h3>Visitanos</h3>
+        <!-- Horarios: mismos que en Ubicación y en el JSON-LD del <head> -->
         <p>Calle 13 N.º 4478<br>Berisso Centro</p>
         <p>Lun a vie 8 a 20 h<br>Sáb y dom 9 a 21 h</p>
       </div>
