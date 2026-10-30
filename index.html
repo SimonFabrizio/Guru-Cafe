@@ -22,10 +22,41 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Gurú Café, café y vermú en Berisso">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://simonfabrizio.github.io/Guru-Cafe/">
+<!-- La imagen del inicio se carga desde el CSS: precargarla hace que aparezca antes -->
+<link rel="preload" as="image" href="fotos/guru-mandala.webp" type="image/webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
+<!-- Datos del local para Google (búsquedas y Maps). EJEMPLO: horarios provisorios;
+     agregar "telephone" con el número real de WhatsApp. Sincronizar con la sección Ubicación. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CafeOrCoffeeShop",
+  "name": "Gurú Café",
+  "description": "Café de especialidad, vermú y comida al paso en el centro de Berisso.",
+  "url": "https://simonfabrizio.github.io/Guru-Cafe/",
+  "image": "https://simonfabrizio.github.io/Guru-Cafe/fotos/og.jpg",
+  "logo": "https://simonfabrizio.github.io/Guru-Cafe/fotos/favicon-192.png",
+  "servesCuisine": ["Café", "Vermú", "Comida al paso"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Calle 13 N.º 4478",
+    "addressLocality": "Berisso",
+    "addressRegion": "Buenos Aires",
+    "addressCountry": "AR"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": -34.8705053, "longitude": -57.8808853 },
+  "hasMap": "https://maps.app.goo.gl/acDm8Dr8mXkuoBvK7",
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "20:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday", "Sunday"], "opens": "09:00", "closes": "21:00" }
+  ],
+  "sameAs": ["https://www.instagram.com/gurucafe.ar/"]
+}
+</script>
 </head>
 <body>
 
