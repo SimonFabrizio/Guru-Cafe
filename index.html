@@ -6,7 +6,7 @@
 <title>Gurú Café | Café, vermú y comida al paso en Berisso</title>
 <meta name="description" content="Mirá la carta, cómo llegar y cómo encargar para retirar en Gurú Café, Calle 13 N.º 4478, Berisso.">
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#0B1014">
+<meta name="theme-color" content="#1C1412">
 <link rel="icon" type="image/png" sizes="64x64" href="fotos/favicon-64.png">
 <link rel="apple-touch-icon" href="fotos/favicon-192.png">
 <meta property="og:type" content="website">
@@ -24,113 +24,145 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-<!-- INICIO -->
-<header class="hero" id="inicio">
-  <div class="hero__bg" aria-hidden="true"></div>
-  <div class="wrap hero__inner">
-    <div class="topbar">
-      <a class="brand" href="#inicio" aria-label="Gurú Café, inicio">
-        <img src="fotos/logo-guru.webp" alt="" width="48" height="48">
-        <span class="brand__name">Gurú Café</span>
-      </a>
-      <nav class="nav" aria-label="Principal">
-        <div class="nav__group">
-          <button class="nav__item" type="button" aria-expanded="false" aria-controls="nav-carta">
-            <span class="nav__label">Menú<svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </button>
-          <ul class="nav__sub" id="nav-carta">
-            <li><a href="#menu" data-tab="tab-cafes">Cafés</a></li>
-            <li><a href="#menu" data-tab="tab-vermu">Vermú</a></li>
-            <li><a href="#menu" data-tab="tab-comida">Comida</a></li>
-            <li class="nav__sep"><a href="#encargar">Cómo encargar</a></li>
-          </ul>
-        </div>
-        <a class="nav__item nav__extra" href="#nosotros"><span class="nav__label">Nosotros</span></a>
-        <a class="nav__item" href="#ubicacion"><span class="nav__label">Ubicación</span></a>
-        <a class="nav__item nav__cta" href="#contacto"><span class="nav__label">Contacto</span></a>
-      </nav>
-    </div>
-    <div class="hero__copy">
-      <p class="eyebrow eyebrow--bronze">Café · Vermú · Comida al paso</p>
-      <h1 class="hero__title">Tu pausa,<br><em>en modo Gurú.</em></h1>
-      <p class="hero__lead">Café de especialidad, vermú y algo rico para llevar, en pleno centro de Berisso.</p>
-      <div class="actions">
-        <a class="btn btn--bronze" href="#menu">Ver menú</a>
-        <a class="btn btn--ghost-bronze" href="#ubicacion">Cómo llegar</a>
+<!-- ENCABEZADO: fijo, transparente sobre el inicio y esmerilado al bajar -->
+<header class="site-header" data-header>
+  <div class="wrap site-header__bar">
+    <a class="brand" href="#inicio" aria-label="Gurú Café, inicio">
+      <img src="fotos/logo-guru.webp" alt="" width="44" height="44">
+      <span class="brand__name">Gurú Café</span>
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <div class="nav__group">
+        <button class="nav__item" type="button" aria-expanded="false" aria-controls="nav-carta">
+          <span class="nav__label">Menú<svg class="nav__chevron" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </button>
+        <ul class="nav__sub" id="nav-carta">
+          <li><a href="#menu" data-filter="cafes">Cafés</a></li>
+          <li><a href="#menu" data-filter="vermu">Vermú</a></li>
+          <li><a href="#menu" data-filter="comida">Comida</a></li>
+          <li class="nav__sep"><a href="#encargar">Cómo encargar</a></li>
+        </ul>
       </div>
-    </div>
+      <a class="nav__item" href="#nosotros"><span class="nav__label">Nosotros</span></a>
+      <a class="nav__item" href="#ubicacion"><span class="nav__label">Ubicación</span></a>
+      <a class="nav__item nav__cta" href="#contacto"><span class="nav__label">Contacto</span></a>
+    </nav>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="menu-movil" aria-label="Abrir menú">
+      <span class="burger__line"></span><span class="burger__line"></span>
+    </button>
+  </div>
+  <div class="drawer" id="menu-movil">
+    <nav class="wrap drawer__nav" aria-label="Menú del celular">
+      <a href="#menu" data-filter="todos">Menú</a>
+      <div class="drawer__sub">
+        <a href="#menu" data-filter="cafes">Cafés</a>
+        <a href="#menu" data-filter="vermu">Vermú</a>
+        <a href="#menu" data-filter="comida">Comida</a>
+      </div>
+      <a href="#encargar">Cómo encargar</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#ubicacion">Ubicación</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
   </div>
 </header>
 
+<!-- INICIO -->
+<section class="hero" id="inicio">
+  <div class="hero__bg" data-parallax="0.3" aria-hidden="true"></div>
+  <div class="hero__glow" aria-hidden="true"></div>
+  <div class="wrap hero__inner">
+    <div class="hero__copy">
+      <p class="badge"><span class="badge__dot" aria-hidden="true"></span>Café de especialidad ☕</p>
+      <h1 class="hero__title">Tu pausa,<br><em>en modo Gurú.</em></h1>
+      <p class="hero__lead">Café de especialidad, vermú y algo rico para llevar, en pleno centro de Berisso.</p>
+      <div class="actions">
+        <a class="btn btn--primary" href="#menu">Ver menú</a>
+        <a class="btn btn--ghost-light" href="#ubicacion">Cómo llegar</a>
+      </div>
+    </div>
+    <figure class="hero__cup" data-tilt aria-hidden="true">
+      <img src="fotos/vaso-recorte.webp" alt="" width="600" height="627">
+      <figcaption class="hero__tag">Para llevar<span>en vaso Gurú</span></figcaption>
+    </figure>
+  </div>
+  <a class="hero__scroll" href="#menu" aria-label="Bajar a la carta"><span></span></a>
+</section>
+
 <main>
 <!-- MENÚ -->
-<section class="section" id="menu">
+<section class="section menu" id="menu">
   <div class="wrap">
-    <p class="eyebrow" data-reveal>La carta</p>
-    <h2 class="h2" data-reveal>Menú.</h2>
-    <p class="note" data-reveal>Carta de ejemplo, se actualiza al abrir. <!-- EJEMPLO: carta provisoria --></p>
-    <div class="tabs" data-reveal role="tablist" aria-label="Categorías del menú"><button class="tab" role="tab" id="tab-cafes" aria-controls="panel-cafes" aria-selected="true" tabindex="0">Cafés</button><button class="tab" role="tab" id="tab-vermu" aria-controls="panel-vermu" aria-selected="false" tabindex="-1">Vermú</button><button class="tab" role="tab" id="tab-comida" aria-controls="panel-comida" aria-selected="false" tabindex="-1">Comida</button></div>
-    <div class="panels" data-reveal>
-    <ul class="dishes" role="tabpanel" id="panel-cafes" aria-labelledby="tab-cafes">
-        <li class="dish">
-          <div class="dish__photo" role="img" aria-label="Foto del plato pendiente"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Foto</span></div>
-          <div class="dish__text"><h3>Espresso</h3><p>Café de especialidad, intenso</p></div>
-        </li>
-        <li class="dish">
-          <div class="dish__photo" role="img" aria-label="Foto del plato pendiente"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Foto</span></div>
-          <div class="dish__text"><h3>Cortado</h3><p>Espresso con un toque de leche</p></div>
-        </li>
-        <li class="dish">
-          <div class="dish__photo" role="img" aria-label="Foto del plato pendiente"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Foto</span></div>
-          <div class="dish__text"><h3>Flat white</h3><p>Doble espresso, leche texturizada</p></div>
-        </li>
-        <li class="dish">
-          <div class="dish__photo" role="img" aria-label="Foto del plato pendiente"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Foto</span></div>
-          <div class="dish__text"><h3>Capuchino</h3><p>Espuma sedosa, canela opcional</p></div>
-        </li>
-        <li class="dish">
-          <div class="dish__photo" role="img" aria-label="Foto del plato pendiente"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Foto</span></div>
-          <div class="dish__text"><h3>Latte</h3><p>Suave y cremoso</p></div>
-        </li>
-        <li class="dish">
-          <div class="dish__photo" role="img" aria-label="Foto del plato pendiente"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Foto</span></div>
-          <div class="dish__text"><h3>Café frío</h3><p>Cold brew con hielo</p></div>
-        </li>
-    </ul>
-    <ul class="dishes" role="tabpanel" id="panel-vermu" aria-labelledby="tab-vermu" hidden>
-        <li class="dish">
-          <div class="dish__photo" role="img" aria-label="Foto del plato pendiente"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Foto</span></div>
-          <div class="dish__text"><h3>Vermú de la casa</h3><p>Con soda, naranja y aceituna</p></div>
-        </li>
-        <li class="dish">
-          <div class="dish__photo" role="img" aria-label="Foto del plato pendiente"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Foto</span></div>
-          <div class="dish__text"><h3>Vermú con picada</h3><p>Para compartir de a dos</p></div>
-        </li>
-    </ul>
-    <ul class="dishes" role="tabpanel" id="panel-comida" aria-labelledby="tab-comida" hidden>
-        <li class="dish">
-          <div class="dish__photo" role="img" aria-label="Foto del plato pendiente"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Foto</span></div>
-          <div class="dish__text"><h3>Tostado de jamón y queso</h3><p>Pan de masa madre</p></div>
-        </li>
-        <li class="dish">
-          <div class="dish__photo" role="img" aria-label="Foto del plato pendiente"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Foto</span></div>
-          <div class="dish__text"><h3>Medialuna</h3><p>De manteca</p></div>
-        </li>
-        <li class="dish">
-          <div class="dish__photo" role="img" aria-label="Foto del plato pendiente"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Foto</span></div>
-          <div class="dish__text"><h3>Tostón de palta</h3><p>Con huevo y semillas</p></div>
-        </li>
-        <li class="dish">
-          <div class="dish__photo" role="img" aria-label="Foto del plato pendiente"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Foto</span></div>
-          <div class="dish__text"><h3>Budín del día</h3><p>Preguntá por el sabor</p></div>
-        </li>
-    </ul>
+    <div class="section__head">
+      <div data-reveal>
+        <p class="eyebrow">La carta</p>
+        <h2 class="h2">Menú de la casa.</h2>
+      </div>
+      <p class="note" data-reveal>Carta y precios de ejemplo, se actualizan al abrir. <!-- EJEMPLO: carta y precios provisorios (textos.md) --></p>
     </div>
+    <div class="filters" data-reveal role="group" aria-label="Filtrar la carta">
+      <button class="filter" type="button" data-filter="todos" aria-pressed="true">Todos</button>
+      <button class="filter" type="button" data-filter="cafes" aria-pressed="false">Cafés</button>
+      <button class="filter" type="button" data-filter="vermu" aria-pressed="false">Vermú</button>
+      <button class="filter" type="button" data-filter="comida" aria-pressed="false">Comida</button>
+    </div>
+    <p class="sr-only" aria-live="polite" data-filter-status></p>
+    <!-- EJEMPLO: notas de cata y etiquetas a confirmar con el dueño -->
+    <ul class="cards">
+      <li class="card" data-reveal data-cat="cafes">
+        <div class="card__photo" role="img" aria-label="Foto del plato pendiente"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Foto</span></div>
+        <div class="card__body"><div class="card__top"><h3>Espresso</h3><p class="price">$2.200</p></div><p>Café de especialidad, intenso.</p><ul class="tags"><li>Cacao</li><li>Cuerpo alto</li></ul></div>
+      </li>
+      <li class="card" data-reveal data-cat="cafes">
+        <div class="card__photo" role="img" aria-label="Foto del plato pendiente"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Foto</span></div>
+        <div class="card__body"><div class="card__top"><h3>Cortado</h3><p class="price">$2.600</p></div><p>Espresso con un toque de leche.</p><ul class="tags"><li>Avellana</li><li>Equilibrado</li></ul></div>
+      </li>
+      <li class="card" data-reveal data-cat="cafes">
+        <div class="card__photo" role="img" aria-label="Foto del plato pendiente"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Foto</span></div>
+        <div class="card__body"><div class="card__top"><h3>Flat white</h3><p class="price">$3.800</p></div><p>Doble espresso, leche texturizada.</p><ul class="tags"><li>Caramelo</li><li>Sedoso</li></ul></div>
+      </li>
+      <li class="card" data-reveal data-cat="cafes">
+        <div class="card__photo" role="img" aria-label="Foto del plato pendiente"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Foto</span></div>
+        <div class="card__body"><div class="card__top"><h3>Capuchino</h3><p class="price">$3.600</p></div><p>Espuma sedosa, canela opcional.</p><ul class="tags"><li>Canela</li><li>Cremoso</li></ul></div>
+      </li>
+      <li class="card" data-reveal data-cat="cafes">
+        <div class="card__photo" role="img" aria-label="Foto del plato pendiente"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Foto</span></div>
+        <div class="card__body"><div class="card__top"><h3>Latte</h3><p class="price">$3.800</p></div><p>Suave y cremoso.</p><ul class="tags"><li>Vainilla</li><li>Suave</li></ul></div>
+      </li>
+      <li class="card" data-reveal data-cat="cafes">
+        <div class="card__photo" role="img" aria-label="Foto del plato pendiente"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Foto</span></div>
+        <div class="card__body"><div class="card__top"><h3>Café frío</h3><p class="price">$4.000</p></div><p>Cold brew con hielo.</p><ul class="tags"><li>Cítrico</li><li>Refrescante</li></ul></div>
+      </li>
+      <li class="card" data-reveal data-cat="vermu">
+        <div class="card__photo" role="img" aria-label="Foto del plato pendiente"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Foto</span></div>
+        <div class="card__body"><div class="card__top"><h3>Vermú de la casa</h3><p class="price">$5.500</p></div><p>Con soda, naranja y aceituna.</p><ul class="tags"><li>Amargo</li><li>Clásico</li></ul></div>
+      </li>
+      <li class="card" data-reveal data-cat="vermu">
+        <div class="card__photo" role="img" aria-label="Foto del plato pendiente"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Foto</span></div>
+        <div class="card__body"><div class="card__top"><h3>Vermú con picada</h3><p class="price">$12.000</p></div><p>Para compartir de a dos.</p><ul class="tags"><li>Para dos</li></ul></div>
+      </li>
+      <li class="card" data-reveal data-cat="comida">
+        <div class="card__photo" role="img" aria-label="Foto del plato pendiente"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Foto</span></div>
+        <div class="card__body"><div class="card__top"><h3>Tostado de jamón y queso</h3><p class="price">$5.800</p></div><p>Pan de masa madre.</p><ul class="tags"><li>Masa madre</li></ul></div>
+      </li>
+      <li class="card" data-reveal data-cat="comida">
+        <div class="card__photo" role="img" aria-label="Foto del plato pendiente"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Foto</span></div>
+        <div class="card__body"><div class="card__top"><h3>Medialuna</h3><p class="price">$1.800</p></div><p>De manteca.</p><ul class="tags"><li>Recién horneada</li></ul></div>
+      </li>
+      <li class="card" data-reveal data-cat="comida">
+        <div class="card__photo" role="img" aria-label="Foto del plato pendiente"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Foto</span></div>
+        <div class="card__body"><div class="card__top"><h3>Tostón de palta</h3><p class="price">$7.200</p></div><p>Con huevo y semillas.</p><ul class="tags"><li>Veggie</li></ul></div>
+      </li>
+      <li class="card" data-reveal data-cat="comida">
+        <div class="card__photo" role="img" aria-label="Foto del plato pendiente"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Foto</span></div>
+        <div class="card__body"><div class="card__top"><h3>Budín del día</h3><p class="price">$3.500</p></div><p>Preguntá por el sabor.</p><ul class="tags"><li>Casero</li></ul></div>
+      </li>
+    </ul>
   </div>
 </section>
 
@@ -138,8 +170,8 @@
 <section class="order" id="encargar">
   <div class="wrap order__grid">
     <div data-reveal>
-      <p class="eyebrow">Para retirar</p>
-      <h2 class="order__title">Encargá.<br>Retirá.<br>Sin esperar.</h2>
+      <p class="eyebrow eyebrow--dark">Para retirar</p>
+      <h2 class="order__title">Encargá.<br>Retirá.<br><em>Sin esperar.</em></h2>
     </div>
     <ol class="steps">
       <li data-reveal><span class="steps__n">1</span><span>Escribinos por Instagram o WhatsApp y contanos qué querés.</span></li>
@@ -152,13 +184,22 @@
 <!-- NOSOTROS -->
 <section class="about" id="nosotros">
   <div class="wrap about__grid">
-    <div data-reveal>
+    <div class="about__copy" data-reveal>
       <p class="eyebrow">Nosotros</p>
       <h2 class="h2 about__title">Encuentros.<br>Historias.<br><em>Amigos.</em></h2>
       <p class="about__text">En Gurú Café creemos que una buena pausa empieza con un buen café. Café de especialidad, vermú y algo rico para llevar, en un lugar pensado para encontrarte con los tuyos.</p>
       <!-- EJEMPLO: texto genérico, el dueño debe corregirlo con su historia real -->
+      <ul class="facts">
+        <li><strong>Especialidad</strong><span>Granos seleccionados</span></li>
+        <li><strong>Al paso</strong><span>Encargá y retirá</span></li>
+      </ul>
     </div>
-    <img class="about__img" data-reveal src="fotos/interior-oscuro.webp" alt="Salón cálido con lámparas colgantes" width="450" height="600" loading="lazy">
+    <!-- EJEMPLO: fotos de referencia, reemplazar por fotos propias del local -->
+    <div class="gallery">
+      <img class="gallery__a" data-reveal src="fotos/interior-claro.webp" alt="Salón luminoso con mesas de madera" width="612" height="397" loading="lazy">
+      <img class="gallery__b" data-reveal src="fotos/cafetera.webp" alt="Máquina de espresso con tazas" width="452" height="678" loading="lazy">
+      <img class="gallery__c" data-reveal src="fotos/cafe-macarons.webp" alt="Dos cafés con macarons" width="569" height="539" loading="lazy">
+    </div>
   </div>
 </section>
 
@@ -166,15 +207,17 @@
 <section class="where" id="ubicacion">
   <div class="wrap where__grid">
     <div data-reveal>
-      <p class="eyebrow eyebrow--bronze">Dónde estamos</p>
-      <h2 class="where__title">Calle 13<br>N.º 4478.</h2>
+      <p class="eyebrow eyebrow--light">Dónde estamos</p>
+      <h2 class="where__title">Calle 13<br><em>N.º 4478.</em></h2>
       <address class="where__addr">Berisso Centro, Buenos Aires</address>
+      <!-- EJEMPLO: el local todavía no abrió. Los horarios de abajo alimentan el aviso "Abierto ahora" (main.js lee data-days, data-open y data-close) -->
+      <p class="status" data-status hidden><span class="status__dot" aria-hidden="true"></span><span data-status-text></span></p>
       <dl class="hours">
-        <div><dt>Lunes a viernes</dt><dd>8:00 a 20:00</dd></div>
-        <div><dt>Sábados y domingos</dt><dd>9:00 a 21:00</dd></div>
+        <div data-days="1,2,3,4,5" data-open="8:00" data-close="20:00"><dt>Lunes a viernes</dt><dd>8:00 a 20:00</dd></div>
+        <div data-days="6,0" data-open="9:00" data-close="21:00"><dt>Sábados y domingos</dt><dd>9:00 a 21:00</dd></div>
       </dl>
-      <p class="hours__note">Horarios de ejemplo. <!-- EJEMPLO: el local todavía no abrió --></p>
-      <p class="eyebrow eyebrow--bronze">Pagás con</p>
+      <p class="hours__note">Horarios de ejemplo.</p>
+      <p class="eyebrow eyebrow--light">Pagás con</p>
       <ul class="chips">
         <li>Efectivo</li><li>Transferencia</li><li>QR</li><li>Débito</li><li>Crédito</li>
       </ul>
@@ -189,30 +232,64 @@
 
 </main>
 
-<!-- CONTACTO -->
+<!-- CONTACTO Y PIE -->
 <footer class="contact" id="contacto">
   <div class="wrap">
     <div class="contact__head">
-    <div data-reveal>
-    <p class="eyebrow eyebrow--bronze">Contacto</p>
-    <h2 class="contact__title">Hablemos.</h2>
+      <div data-reveal>
+        <p class="eyebrow eyebrow--light">Contacto</p>
+        <h2 class="contact__title">Hablemos.</h2>
+      </div>
+      <div class="contact__box" data-reveal>
+        <div class="contact__actions">
+          <a class="btn btn--primary" href="https://wa.me/5492210000000?text=Hola%20Gur%C3%BA%2C%20quer%C3%ADa%20consultar%20por%20un%20pedido" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.5 7.3L3 20l1.3-5A8.4 8.4 0 1 1 21 11.5z"/></svg>
+            Escribinos por WhatsApp
+          </a>
+          <a class="btn btn--ghost-light" href="https://www.instagram.com/gurucafe.ar/" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+            @gurucafe.ar
+          </a>
+        </div>
+        <p class="contact__note">Número de WhatsApp de ejemplo. <!-- EJEMPLO: reemplazar por el número real --></p>
+      </div>
     </div>
-    <div class="contact__box" data-reveal>
-    <div class="contact__actions">
-      <a class="btn btn--bronze" href="https://wa.me/5492210000000?text=Hola%20Gur%C3%BA%2C%20quer%C3%ADa%20consultar%20por%20un%20pedido" rel="noopener">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.5 7.3L3 20l1.3-5A8.4 8.4 0 1 1 21 11.5z"/></svg>
-        Escribinos por WhatsApp
-      </a>
-      <a class="btn btn--ghost-cream" href="https://www.instagram.com/gurucafe.ar/" rel="noopener">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
-        @gurucafe.ar
-      </a>
+
+    <div class="foot" data-reveal>
+      <div class="foot__brand">
+        <img src="fotos/logo-guru.webp" alt="" width="56" height="56" loading="lazy">
+        <p>Tu pausa, <em>en modo Gurú.</em></p>
+      </div>
+      <nav class="foot__col" aria-label="Enlaces rápidos">
+        <h3>Navegá</h3>
+        <a href="#menu">Menú</a>
+        <a href="#encargar">Cómo encargar</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#ubicacion">Ubicación</a>
+      </nav>
+      <div class="foot__col">
+        <h3>Visitanos</h3>
+        <p>Calle 13 N.º 4478<br>Berisso Centro</p>
+        <p>Lun a vie 8 a 20 h<br>Sáb y dom 9 a 21 h</p>
+      </div>
+      <div class="foot__col">
+        <h3>Seguinos</h3>
+        <div class="social">
+          <a class="social__link" data-magnet href="https://www.instagram.com/gurucafe.ar/" rel="noopener" aria-label="Instagram de Gurú Café">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          </a>
+          <a class="social__link" data-magnet href="https://wa.me/5492210000000?text=Hola%20Gur%C3%BA%2C%20quer%C3%ADa%20consultar%20por%20un%20pedido" rel="noopener" aria-label="WhatsApp de Gurú Café">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.5 7.3L3 20l1.3-5A8.4 8.4 0 1 1 21 11.5z"/></svg>
+          </a>
+          <a class="social__link" data-magnet href="https://maps.app.goo.gl/acDm8Dr8mXkuoBvK7" rel="noopener" aria-label="Gurú Café en Google Maps">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.1-7-11.5a7 7 0 0 1 14 0C19 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          </a>
+        </div>
+      </div>
     </div>
-    <p class="contact__note">Número de WhatsApp de ejemplo. <!-- EJEMPLO: reemplazar por el número real --></p>
-    </div>
-    </div>
+
     <p class="wordmark" data-reveal aria-hidden="true">Gurú<span>.</span></p>
-    <p class="legal" data-reveal>© Gurú Café · Calle 13 N.º 4478, Berisso</p>
+    <p class="legal">© <span data-year>2026</span> Gurú Café · Calle 13 N.º 4478, Berisso</p>
   </div>
 </footer>
 
